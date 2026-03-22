@@ -86,18 +86,21 @@ export function QuizContainer() {
         <div className="watercolor-card p-8 mb-8">
           <h3 className="text-lg font-bold text-charcoal mb-4">📚 おすすめの本</h3>
           <div className="space-y-3">
-            {result.books.map((book, i) => (
-              <a
-                key={i}
-                href={book.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-4 rounded-xl bg-cream hover:bg-gold-light/30 transition-colors"
-              >
-                <p className="font-bold text-charcoal">{book.title}</p>
-                <p className="text-sm text-charcoal/50">{book.author}</p>
-              </a>
-            ))}
+            {result.books.map((book, i) => {
+              const Tag = book.url ? "a" : "div";
+              const linkProps = book.url ? { href: book.url, target: "_blank", rel: "noopener noreferrer" } : {};
+              return (
+                <Tag
+                  key={i}
+                  {...linkProps}
+                  className="block p-4 rounded-xl bg-cream hover:bg-gold-light/30 transition-colors"
+                >
+                  <p className="font-bold text-charcoal">{book.title}</p>
+                  <p className="text-sm text-charcoal/50">{book.author}</p>
+                  {!book.url && <p className="text-xs text-pink mt-1">🔗 リンク準備中</p>}
+                </Tag>
+              );
+            })}
           </div>
         </div>
 

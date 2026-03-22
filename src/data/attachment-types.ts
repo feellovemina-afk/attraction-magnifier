@@ -21,8 +21,8 @@ export const attachmentTypes: Record<string, AttachmentTypeInfo> = {
       "相手が回避型なら適度な距離感を尊重する",
     ],
     books: [
-      { title: "異性の心を上手に透視する方法", author: "アミール・レバイン", url: "https://www.amazon.co.jp/dp/4833421658" },
-      { title: "愛着障害", author: "岡田尊司", url: "https://www.amazon.co.jp/dp/4334036430" },
+      { title: "異性の心を上手に透視する方法", author: "アミール・レバイン", url: "" },
+      { title: "愛着障害", author: "岡田尊司", url: "" },
     ],
   },
   anxious: {
@@ -46,8 +46,8 @@ export const attachmentTypes: Record<string, AttachmentTypeInfo> = {
       "感情を言葉にして伝える練習をする",
     ],
     books: [
-      { title: "異性の心を上手に透視する方法", author: "アミール・レバイン", url: "https://www.amazon.co.jp/dp/4833421658" },
-      { title: "自己肯定感の教科書", author: "中島輝", url: "https://www.amazon.co.jp/dp/4815601585" },
+      { title: "異性の心を上手に透視する方法", author: "アミール・レバイン", url: "" },
+      { title: "自己肯定感の教科書", author: "中島輝", url: "" },
     ],
   },
   avoidant: {
@@ -71,8 +71,8 @@ export const attachmentTypes: Record<string, AttachmentTypeInfo> = {
       "親密さは危険ではなく、安心だと体験で学ぶ",
     ],
     books: [
-      { title: "愛着障害", author: "岡田尊司", url: "https://www.amazon.co.jp/dp/4334036430" },
-      { title: "回避性愛着障害", author: "岡田尊司", url: "https://www.amazon.co.jp/dp/4334039294" },
+      { title: "愛着障害", author: "岡田尊司", url: "" },
+      { title: "回避性愛着障害", author: "岡田尊司", url: "" },
     ],
   },
   fearful: {
@@ -96,8 +96,8 @@ export const attachmentTypes: Record<string, AttachmentTypeInfo> = {
       "「完璧な関係」を目指さず、「心地よい関係」を目指す",
     ],
     books: [
-      { title: "愛着障害", author: "岡田尊司", url: "https://www.amazon.co.jp/dp/4334036430" },
-      { title: "それでいい。", author: "細川貂々, 水島広子", url: "https://www.amazon.co.jp/dp/4422930648" },
+      { title: "愛着障害", author: "岡田尊司", url: "" },
+      { title: "それでいい。", author: "細川貂々, 水島広子", url: "" },
     ],
   },
 };
