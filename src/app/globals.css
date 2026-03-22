@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink: #F5A0B5;
+  --color-pink-light: #FBD5DF;
+  --color-pink-dark: #E8749A;
+  --color-gold: #D4A76A;
+  --color-gold-light: #EDD9B7;
+  --color-cream: #FFF9F5;
+  --color-charcoal: #3D3D3D;
+  --color-butterfly: #C78BB0;
+
+  --font-zen: "Zen Maru Gothic", serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-zen);
+}
+
+/* Water color bokeh background */
+.watercolor-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.watercolor-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(245, 160, 181, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(212, 167, 106, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(199, 139, 176, 0.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 40% 30%, rgba(251, 213, 223, 0.3) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.watercolor-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 160, 181, 0.2);
+  border-radius: 16px;
+}
+
+.watercolor-divider {
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-pink-light), var(--color-gold-light), transparent);
+  border: none;
+}
+
+/* Quiz animations */
+.quiz-enter {
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.quiz-fade {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
