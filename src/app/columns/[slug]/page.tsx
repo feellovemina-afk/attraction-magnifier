@@ -28,6 +28,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: column.excerpt,
       type: "article",
       publishedTime: column.date,
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(column.title)}&subtitle=${encodeURIComponent(column.category)}`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: column.title,
+      description: column.excerpt,
+      images: [`/api/og?title=${encodeURIComponent(column.title)}&subtitle=${encodeURIComponent(column.category)}`],
     },
   };
 }

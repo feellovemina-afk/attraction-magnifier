@@ -32,11 +32,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: `/api/og?title=${encodeURIComponent("Attraction Magnifier")}&subtitle=${encodeURIComponent("恋が動き出す、わたしのアップデート")}`,
+        width: 1200,
+        height: 630,
+        alt: "Attraction Magnifier",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.nameJa}`,
     description: siteConfig.description,
+    images: [`/api/og?title=${encodeURIComponent("Attraction Magnifier")}&subtitle=${encodeURIComponent("恋が動き出す、わたしのアップデート")}`],
   },
 };
 
