@@ -6,23 +6,23 @@ import { FadeIn } from "@/components/ui/FadeIn";
 const features = [
   {
     emoji: "🔮",
-    title: "愛着スタイル診断",
-    description: "3分・10問であなたの恋愛パターンがわかる",
+    title: "心理学診断",
+    description: "愛着スタイル・自己肯定感をセルフチェック",
     href: "/quiz",
     color: "from-pink/20 to-butterfly/20",
   },
   {
     emoji: "📖",
-    title: "恋愛心理学コラム",
-    description: "心理学で読み解く、恋愛の「なぜ？」",
+    title: "コラム",
+    description: "恋愛・自己理解・メンタルを心理学で読み解く",
     href: "/columns",
     color: "from-gold/20 to-gold-light/20",
   },
   {
-    emoji: "✨",
-    title: "My Picks",
-    description: "美容・本・アプリの厳選おすすめ",
-    href: "/picks",
+    emoji: "💌",
+    title: "お悩み相談",
+    description: "匿名であなたの悩みを聞かせて",
+    href: "/contact",
     color: "from-pink-light/30 to-pink/20",
   },
 ];
@@ -44,14 +44,14 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 py-20 max-w-2xl mx-auto">
           <p className="text-2xl mb-4 animate-pulse [text-shadow:0_2px_8px_rgba(255,255,255,0.8)]">🦋</p>
           <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl font-semibold text-charcoal mb-4 leading-tight [text-shadow:0_2px_12px_rgba(255,255,255,0.7)]">
-            彼の&quot;冷たさ&quot;には<br className="md:hidden" />理由がある
+            &quot;もっと好きな自分&quot;に<br className="md:hidden" />出会う場所
           </h1>
           <p className="text-base md:text-lg text-charcoal/80 mb-2 [text-shadow:0_1px_6px_rgba(255,255,255,0.6)]">
             {siteConfig.name} — {siteConfig.nameJa}
           </p>
           <p className="text-sm md:text-base text-charcoal/70 mb-8 leading-relaxed [text-shadow:0_1px_6px_rgba(255,255,255,0.6)]">
-            心理学で恋愛を読み解く。<br />
-            3分の無料診断で、あなたの恋愛パターンがわかります。
+            恋愛・自己理解・メンタル。<br />
+            心理学であなたの魅力をそっと引き出す。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
