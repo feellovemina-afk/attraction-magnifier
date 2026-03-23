@@ -7,7 +7,7 @@ const features = [
   {
     emoji: "🔮",
     title: "愛着スタイル診断",
-    description: "10問の質問で、あなたの恋愛パターンがわかる",
+    description: "3分・10問であなたの恋愛パターンがわかる",
     href: "/quiz",
     color: "from-pink/20 to-butterfly/20",
   },
@@ -19,18 +19,11 @@ const features = [
     color: "from-gold/20 to-gold-light/20",
   },
   {
-    emoji: "💄",
-    title: "Beauty Picks",
-    description: "自分磨きが加速するおすすめアイテム",
-    href: "/beauty",
+    emoji: "✨",
+    title: "My Picks",
+    description: "美容・本・アプリの厳選おすすめ",
+    href: "/picks",
     color: "from-pink-light/30 to-pink/20",
-  },
-  {
-    emoji: "📚",
-    title: "Book Shelf",
-    description: "恋愛力が上がる心理学の本",
-    href: "/books",
-    color: "from-gold-light/30 to-cream",
   },
 ];
 
@@ -46,44 +39,49 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-transparent to-cream/80" />
         <div className="relative z-10 text-center px-4 py-20 max-w-2xl mx-auto">
           <p className="text-butterfly text-2xl mb-4 animate-pulse">🦋</p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl font-semibold text-charcoal mb-4 drop-shadow-sm">
-            {siteConfig.name}
+          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl font-semibold text-charcoal mb-4 drop-shadow-sm leading-tight">
+            彼の&quot;冷たさ&quot;には<br className="md:hidden" />理由がある
           </h1>
-          <p className="text-lg md:text-xl text-charcoal/70 mb-2">
-            {siteConfig.nameJa}
+          <p className="text-base md:text-lg text-charcoal/60 mb-2">
+            {siteConfig.name} — {siteConfig.nameJa}
           </p>
-          <p className="text-xl md:text-2xl text-charcoal/80 font-medium mt-4 mb-3">
-            {siteConfig.tagline}
+          <p className="text-sm md:text-base text-charcoal/50 mb-8 leading-relaxed">
+            心理学で恋愛を読み解く。<br />
+            3分の無料診断で、あなたの恋愛パターンがわかります。
           </p>
-          <p className="text-sm md:text-base text-charcoal/50 mb-10">
-            心理学であなたの恋愛パターンを分析。<br className="hidden md:block" />
-            本当の気持ちが見えてくる。
-          </p>
-          <Link
-            href="/quiz"
-            className="inline-block bg-pink hover:bg-pink-dark text-white font-medium px-10 py-4 rounded-full transition-all hover:shadow-xl hover:-translate-y-1 text-lg shadow-lg"
-          >
-            🔮 無料で診断する
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/quiz"
+              className="inline-block bg-pink hover:bg-pink-dark text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-xl hover:-translate-y-1 text-base md:text-lg shadow-lg"
+            >
+              🔮 無料で診断する
+            </Link>
+            <Link
+              href="/columns"
+              className="inline-block border-2 border-charcoal/20 hover:border-pink text-charcoal/70 hover:text-pink-dark font-medium px-8 py-4 rounded-full transition-all hover:-translate-y-1 text-base md:text-lg"
+            >
+              📖 コラムを読む
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Feature Cards */}
+      {/* Feature Cards - 3 cards */}
       <section className="max-w-5xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {features.map((feature, i) => (
             <FadeIn key={feature.href} delay={i * 100}>
               <Link
                 href={feature.href}
-                className="block watercolor-card p-8 hover:shadow-lg transition-all hover:-translate-y-1 group"
+                className="block watercolor-card p-6 md:p-8 hover:shadow-lg transition-all hover:-translate-y-1 group text-center"
               >
-                <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${feature.color} flex items-center justify-center text-2xl mb-4`}>
+                <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${feature.color} flex items-center justify-center text-2xl mb-4 mx-auto`}>
                   {feature.emoji}
                 </div>
-                <h2 className="text-xl font-bold text-charcoal mb-2 group-hover:text-pink-dark transition-colors">
+                <h2 className="font-[family-name:var(--font-playfair)] text-lg font-bold text-charcoal mb-2 group-hover:text-pink-dark transition-colors">
                   {feature.title}
                 </h2>
-                <p className="text-charcoal/60">{feature.description}</p>
+                <p className="text-sm text-charcoal/60">{feature.description}</p>
               </Link>
             </FadeIn>
           ))}
@@ -94,7 +92,7 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-4 py-16">
         <FadeIn>
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-2">最新コラム</h2>
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-2">Latest Columns</h2>
             <p className="text-charcoal/50">心理学で読み解く、恋愛の「なぜ？」</p>
           </div>
         </FadeIn>
@@ -114,7 +112,7 @@ export default function Home() {
                       </span>
                       <span className="text-xs text-charcoal/40">{col.date}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-charcoal group-hover:text-pink-dark transition-colors mb-1">
+                    <h3 className="font-[family-name:var(--font-playfair)] text-lg font-bold text-charcoal group-hover:text-pink-dark transition-colors mb-1">
                       {col.title}
                     </h3>
                     <p className="text-sm text-charcoal/60 line-clamp-2">{col.excerpt}</p>
@@ -140,16 +138,16 @@ export default function Home() {
       <section className="watercolor-bg py-16">
         <FadeIn>
           <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-4">
               あなたの恋愛パターン、知ってる？
             </h2>
-            <p className="text-charcoal/60 mb-8 text-lg">
+            <p className="text-charcoal/60 mb-8 text-base md:text-lg">
               心理学の「愛着スタイル理論」をもとにした10問の診断で、<br className="hidden md:block" />
               あなたの恋愛の傾向と対策がわかります。
             </p>
             <Link
               href="/quiz"
-              className="inline-block bg-gold hover:bg-gold/80 text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg text-lg"
+              className="inline-block bg-gold hover:bg-gold/80 text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg text-base md:text-lg"
             >
               診断をはじめる →
             </Link>
@@ -160,7 +158,7 @@ export default function Home() {
       {/* SNS Links */}
       <section className="max-w-5xl mx-auto px-4 py-16">
         <FadeIn>
-          <h2 className="text-center text-xl font-bold text-charcoal mb-8">Follow me</h2>
+          <h2 className="font-[family-name:var(--font-playfair)] text-center text-xl font-bold text-charcoal mb-8">Follow me</h2>
         </FadeIn>
         <div className="flex justify-center gap-6 flex-wrap">
           {[

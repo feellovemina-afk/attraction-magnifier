@@ -13,7 +13,7 @@ export default function ColumnsPage() {
     <section className="max-w-3xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <p className="text-3xl mb-3">📖</p>
-        <h1 className="text-2xl md:text-3xl font-bold text-charcoal mb-3">
+        <h1 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-3">
           恋愛心理学コラム
         </h1>
         <p className="text-charcoal/60">
@@ -44,7 +44,7 @@ export default function ColumnsPage() {
                       {column.date}
                     </span>
                   </div>
-                  <h2 className="text-lg font-bold text-charcoal group-hover:text-pink-dark transition-colors mb-2">
+                  <h2 className="font-[family-name:var(--font-playfair)] text-lg font-bold text-charcoal group-hover:text-pink-dark transition-colors mb-2">
                     {column.title}
                   </h2>
                   <p className="text-sm text-charcoal/60 line-clamp-2">
