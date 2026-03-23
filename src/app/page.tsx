@@ -37,19 +37,19 @@ export default function Home() {
         <img
           src="https://cdn.midjourney.com/5f57be76-488f-4069-91a8-4fd2fd671e75/0_1.png"
           alt="Attraction Magnifier Hero"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/60 via-cream/30 to-cream/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/70 via-cream/40 to-cream/85" />
         <div className="absolute inset-0 bg-charcoal/10" />
         <div className="relative z-10 text-center px-4 py-20 max-w-2xl mx-auto">
-          <p className="text-2xl mb-4 animate-pulse drop-shadow-md">🦋</p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl font-semibold text-charcoal mb-4 drop-shadow-md leading-tight">
+          <p className="text-2xl mb-4 animate-pulse [text-shadow:0_2px_8px_rgba(255,255,255,0.8)]">🦋</p>
+          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl font-semibold text-charcoal mb-4 leading-tight [text-shadow:0_2px_12px_rgba(255,255,255,0.7)]">
             彼の&quot;冷たさ&quot;には<br className="md:hidden" />理由がある
           </h1>
-          <p className="text-base md:text-lg text-charcoal/80 mb-2 drop-shadow-sm">
+          <p className="text-base md:text-lg text-charcoal/80 mb-2 [text-shadow:0_1px_6px_rgba(255,255,255,0.6)]">
             {siteConfig.name} — {siteConfig.nameJa}
           </p>
-          <p className="text-sm md:text-base text-charcoal/70 mb-8 leading-relaxed drop-shadow-sm">
+          <p className="text-sm md:text-base text-charcoal/70 mb-8 leading-relaxed [text-shadow:0_1px_6px_rgba(255,255,255,0.6)]">
             心理学で恋愛を読み解く。<br />
             3分の無料診断で、あなたの恋愛パターンがわかります。
           </p>
