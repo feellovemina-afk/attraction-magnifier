@@ -1,11 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { siteConfig } from "@/data/site-config";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 watercolor-card border-b border-pink-light/30">
@@ -17,20 +24,22 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
           {siteConfig.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-charcoal/70 hover:text-pink-dark transition-colors"
+              className={`text-sm transition-colors ${
+                isActive(item.href)
+                  ? "text-pink-dark font-medium border-b-2 border-pink-dark pb-0.5"
+                  : "text-charcoal/70 hover:text-pink-dark"
+              }`}
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
@@ -44,14 +53,17 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <nav className="md:hidden watercolor-card border-t border-pink-light/30 px-4 py-4 space-y-3">
           {siteConfig.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block text-charcoal/70 hover:text-pink-dark transition-colors py-2"
+              className={`block transition-colors py-2 ${
+                isActive(item.href)
+                  ? "text-pink-dark font-medium"
+                  : "text-charcoal/70 hover:text-pink-dark"
+              }`}
               onClick={() => setIsOpen(false)}
             >
               {item.label}

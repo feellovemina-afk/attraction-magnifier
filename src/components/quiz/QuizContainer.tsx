@@ -104,6 +104,35 @@ export function QuizContainer() {
           </div>
         </div>
 
+        {/* Recommended Column */}
+        <div className="watercolor-card p-8 mb-8">
+          <h3 className="text-lg font-bold text-charcoal mb-4">📖 あなたへのおすすめコラム</h3>
+          {resultType === "avoidant" && (
+            <Link href="/columns/avoidant-attachment-guide" className="block p-4 rounded-xl bg-cream hover:bg-gold-light/30 transition-colors">
+              <p className="font-bold text-charcoal">彼が脈なしサインを出す本当の理由</p>
+              <p className="text-sm text-charcoal/50 mt-1">回避型の彼の心理と具体的な接し方を解説</p>
+            </Link>
+          )}
+          {resultType === "anxious" && (
+            <Link href="/columns/line-honkido-signs" className="block p-4 rounded-xl bg-cream hover:bg-gold-light/30 transition-colors">
+              <p className="font-bold text-charcoal">LINEで彼の本気度がわかる5つのサイン</p>
+              <p className="text-sm text-charcoal/50 mt-1">不安な時こそ「速さ」ではなく「内容」を見よう</p>
+            </Link>
+          )}
+          {resultType === "secure" && (
+            <Link href="/columns/sukiyoke-psychology" className="block p-4 rounded-xl bg-cream hover:bg-gold-light/30 transition-colors">
+              <p className="font-bold text-charcoal">好き避けの心理学</p>
+              <p className="text-sm text-charcoal/50 mt-1">安定型のあなたが気づきにくい相手の心理</p>
+            </Link>
+          )}
+          {resultType === "fearful" && (
+            <Link href="/columns/avoidant-attachment-guide" className="block p-4 rounded-xl bg-cream hover:bg-gold-light/30 transition-colors">
+              <p className="font-bold text-charcoal">彼が脈なしサインを出す本当の理由</p>
+              <p className="text-sm text-charcoal/50 mt-1">恐れ型と回避型は似た部分が多い。まずここから</p>
+            </Link>
+          )}
+        </div>
+
         <div className="flex flex-col gap-4 items-center">
           <button
             onClick={() => {
@@ -117,10 +146,10 @@ export function QuizContainer() {
             🔄 もう一度診断する
           </button>
           <Link
-            href="/"
+            href="/columns"
             className="text-charcoal/50 hover:text-charcoal text-sm transition-colors"
           >
-            トップに戻る
+            すべてのコラムを見る →
           </Link>
         </div>
       </div>
