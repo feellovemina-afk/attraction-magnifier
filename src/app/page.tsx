@@ -68,10 +68,24 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-charcoal/40">
+            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
       </section>
 
       {/* Feature Cards - 3 cards */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
+      <section className="max-w-5xl mx-auto px-4 py-8">
+        <FadeIn>
+          <div className="text-center mb-8">
+            <h2 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl font-bold text-charcoal mb-1">
+              恋愛力を上げる、3つのアプローチ
+            </h2>
+            <p className="text-sm text-charcoal/40">What we offer</p>
+          </div>
+        </FadeIn>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {features.map((feature, i) => (
             <FadeIn key={feature.href} delay={i * 100}>
@@ -93,11 +107,11 @@ export default function Home() {
       </section>
 
       {/* Latest Columns */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
+      <section className="max-w-5xl mx-auto px-4 py-12">
         <FadeIn>
           <div className="text-center mb-10">
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-2">Latest Columns</h2>
-            <p className="text-charcoal/50">心理学で読み解く、恋愛の「なぜ？」</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-1">最新コラム</h2>
+            <p className="font-[family-name:var(--font-playfair)] text-sm text-charcoal/30 italic">Latest Columns</p>
           </div>
         </FadeIn>
         <div className="space-y-4">
@@ -146,12 +160,18 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* Quiz Banner */}
-      <section className="watercolor-bg py-16">
+      {/* Quiz Banner with MJ image */}
+      <section className="relative overflow-hidden py-20">
+        <img
+          src="https://cdn.midjourney.com/dae14c97-1c8f-4e5e-a9a7-d6f1471b4fc3/0_0.png"
+          alt="診断背景"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/90 via-cream/80 to-cream/90" />
         <FadeIn>
           <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-4">
-              あなたの恋愛パターン、知ってる？
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">
+              彼との関係がうまくいかない理由、<br className="hidden md:block" />3分でわかる
             </h2>
             <p className="text-charcoal/60 mb-8 text-base md:text-lg">
               心理学の「愛着スタイル理論」をもとにした10問の診断で、<br className="hidden md:block" />
@@ -159,7 +179,7 @@ export default function Home() {
             </p>
             <Link
               href="/quiz"
-              className="inline-block bg-gold hover:bg-gold/80 text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg text-base md:text-lg"
+              className="inline-block bg-gold hover:bg-gold/80 text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg hover:-translate-y-1 text-base md:text-lg"
             >
               診断をはじめる →
             </Link>
@@ -167,30 +187,66 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* SNS Links */}
+      {/* SNS Links with SVG icons */}
       <section className="max-w-5xl mx-auto px-4 py-16">
         <FadeIn>
-          <h2 className="font-[family-name:var(--font-playfair)] text-center text-xl font-bold text-charcoal mb-8">Follow me</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-xl font-bold text-charcoal mb-1">フォローする</h2>
+            <p className="font-[family-name:var(--font-playfair)] text-sm text-charcoal/30 italic">Follow me</p>
+          </div>
         </FadeIn>
-        <div className="flex justify-center gap-6 flex-wrap">
-          {[
-            { name: "TikTok", url: siteConfig.social.tiktok, icon: "♪", desc: "恋愛心理を1分で" },
-            { name: "note", url: siteConfig.social.note, icon: "N", desc: "深掘りコラム" },
-            { name: "X", url: siteConfig.social.x, icon: "𝕏", desc: "毎日ミニテク配信" },
-          ].map((sns, i) => (
-            <FadeIn key={sns.name} delay={i * 100}>
-              <a
-                href={sns.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-6 text-center transition-all hover:-translate-y-1 min-w-[140px]"
-              >
-                <p className="text-3xl mb-2 text-pink-dark font-bold">{sns.icon}</p>
-                <p className="font-bold text-charcoal">{sns.name}</p>
-                <p className="text-sm text-charcoal/50 mt-1">{sns.desc}</p>
-              </a>
-            </FadeIn>
-          ))}
+        <div className="flex justify-center gap-8 flex-wrap">
+          {/* TikTok */}
+          <FadeIn delay={0}>
+            <a
+              href={siteConfig.social.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-6 text-center transition-all hover:-translate-y-1 min-w-[140px] group"
+            >
+              <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 0010.86 4.46V13.2a8.17 8.17 0 004.79 1.55v-3.4a4.85 4.85 0 01-.79-.07 4.83 4.83 0 01-3.21-2.2V13.2h.01V8.87a8.25 8.25 0 004.78 1.53V6.69z"/>
+                </svg>
+              </div>
+              <p className="font-bold text-charcoal text-sm">TikTok</p>
+              <p className="text-xs text-charcoal/50 mt-1">1分で学べる恋愛心理テク</p>
+            </a>
+          </FadeIn>
+
+          {/* note */}
+          <FadeIn delay={100}>
+            <a
+              href={siteConfig.social.note}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-6 text-center transition-all hover:-translate-y-1 min-w-[140px] group"
+            >
+              <div className="w-14 h-14 rounded-full bg-[#41C9B4] flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                <span className="text-white font-bold text-xl">n</span>
+              </div>
+              <p className="font-bold text-charcoal text-sm">note</p>
+              <p className="text-xs text-charcoal/50 mt-1">心理学の深掘りコラム</p>
+            </a>
+          </FadeIn>
+
+          {/* X */}
+          <FadeIn delay={200}>
+            <a
+              href={siteConfig.social.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-6 text-center transition-all hover:-translate-y-1 min-w-[140px] group"
+            >
+              <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </div>
+              <p className="font-bold text-charcoal text-sm">X</p>
+              <p className="text-xs text-charcoal/50 mt-1">毎日ミニテク配信中</p>
+            </a>
+          </FadeIn>
         </div>
       </section>
     </>
