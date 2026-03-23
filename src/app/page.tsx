@@ -185,7 +185,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="watercolor-card px-8 py-6 text-center hover:shadow-lg transition-all hover:-translate-y-1 min-w-[140px]"
               >
-                <p className="text-3xl mb-2">{sns.icon}</p>
+                <p className="text-3xl mb-2" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>{sns.icon}</p>
                 <p className="font-bold text-charcoal">{sns.name}</p>
                 <p className="text-sm text-charcoal/50 mt-1">{sns.desc}</p>
               </a>
