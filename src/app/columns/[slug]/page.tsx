@@ -77,8 +77,28 @@ export default async function ColumnPage({ params }: Props) {
         <MDXRemote source={column.content} components={columnMdxComponents} />
       </div>
 
+      {/* Author Profile */}
+      <div className="watercolor-card p-6 mt-12 flex items-start gap-4">
+        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink/30 to-gold/30 flex items-center justify-center text-2xl flex-shrink-0">
+          🦋
+        </div>
+        <div>
+          <p className="font-bold text-charcoal">モテ力倍増プランナー</p>
+          <p className="text-xs text-charcoal/40 mb-2">Attraction Magnifier</p>
+          <p className="text-sm text-charcoal/60 leading-relaxed">
+            恋愛心理学をベースに、恋が動き出すヒントをお届け。
+            TikTokで1分動画、noteで深掘りコラム、Xで毎日ミニテクを配信中。
+          </p>
+          <div className="flex gap-3 mt-3">
+            <a href="https://www.tiktok.com/@attractionmagnifier" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">TikTok</a>
+            <a href="https://note.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">note</a>
+            <a href="https://x.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">X</a>
+          </div>
+        </div>
+      </div>
+
       {/* CTA */}
-      <div className="watercolor-bg rounded-2xl p-8 mt-12 text-center relative overflow-hidden">
+      <div className="watercolor-bg rounded-2xl p-8 mt-8 text-center relative overflow-hidden">
         <div className="relative z-10">
           <p className="text-2xl mb-3">🔮</p>
           <h3 className="text-xl font-bold text-charcoal mb-2">

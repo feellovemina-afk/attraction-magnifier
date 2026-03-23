@@ -36,21 +36,34 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="watercolor-bg min-h-[70vh] flex items-center justify-center relative">
-        <div className="relative z-10 text-center px-4 py-20">
-          <p className="text-butterfly text-lg mb-2">🦋</p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-semibold text-charcoal mb-4">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        {/* Background watercolor image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://cdn.midjourney.com/dae14c97-1c8f-4e5e-a9a7-d6f1471b4fc3/0_0.png')",
+            filter: "blur(2px) brightness(1.1)",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/70 via-cream/50 to-cream/90" />
+        <div className="relative z-10 text-center px-4 py-20 max-w-2xl mx-auto">
+          <p className="text-butterfly text-2xl mb-4 animate-pulse">🦋</p>
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl font-semibold text-charcoal mb-4 drop-shadow-sm">
             {siteConfig.name}
           </h1>
           <p className="text-lg md:text-xl text-charcoal/70 mb-2">
             {siteConfig.nameJa}
           </p>
-          <p className="text-xl md:text-2xl text-charcoal/80 font-medium mt-6 mb-10">
+          <p className="text-xl md:text-2xl text-charcoal/80 font-medium mt-4 mb-3">
             {siteConfig.tagline}
+          </p>
+          <p className="text-sm md:text-base text-charcoal/50 mb-10">
+            心理学であなたの恋愛パターンを分析。<br className="hidden md:block" />
+            本当の気持ちが見えてくる。
           </p>
           <Link
             href="/quiz"
-            className="inline-block bg-pink hover:bg-pink-dark text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg hover:-translate-y-0.5 text-lg"
+            className="inline-block bg-pink hover:bg-pink-dark text-white font-medium px-10 py-4 rounded-full transition-all hover:shadow-xl hover:-translate-y-1 text-lg shadow-lg"
           >
             🔮 無料で診断する
           </Link>
