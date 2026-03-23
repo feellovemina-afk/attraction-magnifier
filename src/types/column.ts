@@ -7,6 +7,7 @@ export interface ColumnFrontmatter {
   psychTheory: string;
   keywords: string[];
   coverEmoji: string;
+  coverImage?: string;
 }
 
 export interface Column extends ColumnFrontmatter {

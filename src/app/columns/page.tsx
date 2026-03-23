@@ -10,7 +10,7 @@ export default function ColumnsPage() {
   const columns = getAllColumns();
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-12">
+    <section className="max-w-4xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <p className="text-3xl mb-3">📖</p>
         <h1 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-3">
@@ -31,11 +31,23 @@ export default function ColumnsPage() {
             <Link
               key={column.slug}
               href={`/columns/${column.slug}`}
-              className="block watercolor-card p-6 md:p-8 hover:shadow-lg transition-all hover:-translate-y-0.5 group"
+              className="block watercolor-card overflow-hidden hover:shadow-lg transition-all hover:-translate-y-0.5 group"
             >
-              <div className="flex items-start gap-4">
-                <span className="text-3xl mt-1">{column.coverEmoji}</span>
-                <div className="flex-1">
+              <div className="flex flex-col md:flex-row">
+                {column.coverImage ? (
+                  <div className="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
+                    <img
+                      src={column.coverImage}
+                      alt={column.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ) : (
+                  <div className="md:w-64 h-48 md:h-auto flex-shrink-0 bg-gradient-to-br from-pink-light/30 to-gold-light/30 flex items-center justify-center">
+                    <span className="text-5xl">{column.coverEmoji}</span>
+                  </div>
+                )}
+                <div className="flex-1 p-6 md:p-8">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-xs bg-pink-light/50 text-pink-dark px-2 py-0.5 rounded-full">
                       {column.category}

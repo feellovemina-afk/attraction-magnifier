@@ -101,11 +101,19 @@ export default function Home() {
             <FadeIn key={col.slug} delay={i * 150}>
               <Link
                 href={`/columns/${col.slug}`}
-                className="block watercolor-card p-6 hover:shadow-lg transition-all hover:-translate-y-0.5 group"
+                className="block watercolor-card overflow-hidden hover:shadow-lg transition-all hover:-translate-y-0.5 group"
               >
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl">{col.coverEmoji}</span>
-                  <div className="flex-1">
+                <div className="flex flex-col sm:flex-row">
+                  {col.coverImage ? (
+                    <div className="sm:w-48 h-36 sm:h-auto flex-shrink-0 overflow-hidden">
+                      <img src={col.coverImage} alt={col.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  ) : (
+                    <div className="sm:w-48 h-36 sm:h-auto flex-shrink-0 bg-gradient-to-br from-pink-light/30 to-gold-light/30 flex items-center justify-center">
+                      <span className="text-4xl">{col.coverEmoji}</span>
+                    </div>
+                  )}
+                  <div className="flex-1 p-5">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-xs px-2 py-0.5 rounded-full bg-pink-light/50 text-pink-dark font-medium">
                         {col.category}
