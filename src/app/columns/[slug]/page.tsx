@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getColumnBySlug, getAllColumnSlugs, getAllColumns } from "@/lib/columns";
+import { columnMdxComponents } from "@/components/column/mdx-components";
 import type { Metadata } from "next";
 
 interface Props {
@@ -73,7 +74,7 @@ export default async function ColumnPage({ params }: Props) {
         prose-blockquote:border-l-4 prose-blockquote:border-gold prose-blockquote:bg-cream prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
         prose-li:text-charcoal/80
       ">
-        <MDXRemote source={column.content} />
+        <MDXRemote source={column.content} components={columnMdxComponents} />
       </div>
 
       {/* CTA */}
