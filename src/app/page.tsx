@@ -35,7 +35,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <img
-          src="https://cdn.midjourney.com/5f57be76-488f-4069-91a8-4fd2fd671e75/0_1.png"
+          src="https://cdn.midjourney.com/f9993dcf-5f28-4469-8478-dd5dc718d82f/0_0.png"
           alt="Attraction Magnifier Hero"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
