@@ -183,7 +183,7 @@ export default function Home() {
                 href={sns.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/50 border border-pink-light/20 rounded-2xl px-8 py-6 text-center hover:shadow-lg transition-all hover:-translate-y-1 min-w-[140px]"
+                className="px-8 py-6 text-center transition-all hover:-translate-y-1 min-w-[140px]"
               >
                 <p className="text-3xl mb-2 text-pink-dark font-bold">{sns.icon}</p>
                 <p className="font-bold text-charcoal">{sns.name}</p>
