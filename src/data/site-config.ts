@@ -7,12 +7,13 @@ export const siteConfig = {
   social: {
     tiktok: "https://www.tiktok.com/@attractionmagnifier",
     note: "https://note.com/attract_mag",
-    x: "https://x.com/attractmag_",
+    x: "https://x.com/attract_mag",
   },
   nav: [
     { label: "ホーム", href: "/" },
     { label: "診断", href: "/quiz" },
     { label: "コラム", href: "/columns" },
+    { label: "お悩み相談", href: "/contact" },
     { label: "My Picks", href: "/picks" },
     { label: "About", href: "/about" },
   ],
