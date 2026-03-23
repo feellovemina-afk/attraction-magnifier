@@ -5,6 +5,11 @@ export function Footer() {
   return (
     <footer className="border-t border-pink-light/30 py-8 mt-16">
       <div className="max-w-5xl mx-auto px-4 text-center space-y-4">
+        <img
+          src="/profile-icon.png"
+          alt="モテ力倍増プランナー"
+          className="w-12 h-12 rounded-full mx-auto object-cover"
+        />
         <div className="flex justify-center gap-6">
           <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-charcoal/50 hover:text-pink-dark transition-colors">
             TikTok

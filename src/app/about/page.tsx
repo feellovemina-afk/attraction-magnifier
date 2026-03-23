@@ -11,9 +11,11 @@ export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
-        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink to-gold mx-auto mb-6 flex items-center justify-center text-4xl shadow-lg">
-          🦋
-        </div>
+        <img
+          src="/profile-icon.png"
+          alt="モテ力倍増プランナー"
+          className="w-24 h-24 rounded-full mx-auto mb-6 object-cover shadow-lg"
+        />
         <h1 className="text-3xl font-bold text-charcoal mb-2">モテ力倍増プランナー</h1>
         <p className="text-charcoal/50 text-lg">Attraction Magnifier</p>
       </div>
