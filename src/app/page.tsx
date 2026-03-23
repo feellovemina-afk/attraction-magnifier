@@ -34,18 +34,22 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-light via-[#f5e6d3] to-[#e8d5c4]" />
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_20%_50%,rgba(219,166,166,0.5),transparent_70%),radial-gradient(ellipse_at_80%_20%,rgba(200,170,130,0.4),transparent_60%),radial-gradient(ellipse_at_50%_80%,rgba(180,160,200,0.3),transparent_50%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-transparent to-cream/80" />
+        <img
+          src="https://cdn.midjourney.com/5f57be76-488f-4069-91a8-4fd2fd671e75/0_1.png"
+          alt="Attraction Magnifier Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/60 via-cream/30 to-cream/80" />
+        <div className="absolute inset-0 bg-charcoal/10" />
         <div className="relative z-10 text-center px-4 py-20 max-w-2xl mx-auto">
-          <p className="text-butterfly text-2xl mb-4 animate-pulse">🦋</p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl font-semibold text-charcoal mb-4 drop-shadow-sm leading-tight">
+          <p className="text-2xl mb-4 animate-pulse drop-shadow-md">🦋</p>
+          <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl font-semibold text-charcoal mb-4 drop-shadow-md leading-tight">
             彼の&quot;冷たさ&quot;には<br className="md:hidden" />理由がある
           </h1>
-          <p className="text-base md:text-lg text-charcoal/60 mb-2">
+          <p className="text-base md:text-lg text-charcoal/80 mb-2 drop-shadow-sm">
             {siteConfig.name} — {siteConfig.nameJa}
           </p>
-          <p className="text-sm md:text-base text-charcoal/50 mb-8 leading-relaxed">
+          <p className="text-sm md:text-base text-charcoal/70 mb-8 leading-relaxed drop-shadow-sm">
             心理学で恋愛を読み解く。<br />
             3分の無料診断で、あなたの恋愛パターンがわかります。
           </p>
@@ -58,7 +62,7 @@ export default function Home() {
             </Link>
             <Link
               href="/columns"
-              className="inline-block border-2 border-charcoal/20 hover:border-pink text-charcoal/70 hover:text-pink-dark font-medium px-8 py-4 rounded-full transition-all hover:-translate-y-1 text-base md:text-lg"
+              className="inline-block bg-white/80 backdrop-blur-sm border-2 border-charcoal/20 hover:border-pink text-charcoal/70 hover:text-pink-dark font-medium px-8 py-4 rounded-full transition-all hover:-translate-y-1 text-base md:text-lg"
             >
               📖 コラムを読む
             </Link>
