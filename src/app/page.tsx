@@ -174,9 +174,9 @@ export default function Home() {
         </FadeIn>
         <div className="flex justify-center gap-6 flex-wrap">
           {[
-            { name: "TikTok", url: siteConfig.social.tiktok, icon: "🎵", desc: "恋愛心理を1分で" },
-            { name: "note", url: siteConfig.social.note, icon: "📝", desc: "深掘りコラム" },
-            { name: "X", url: siteConfig.social.x, icon: "💬", desc: "毎日ミニテク配信" },
+            { name: "TikTok", url: siteConfig.social.tiktok, icon: "♪", desc: "恋愛心理を1分で" },
+            { name: "note", url: siteConfig.social.note, icon: "N", desc: "深掘りコラム" },
+            { name: "X", url: siteConfig.social.x, icon: "𝕏", desc: "毎日ミニテク配信" },
           ].map((sns, i) => (
             <FadeIn key={sns.name} delay={i * 100}>
               <a
@@ -185,7 +185,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="watercolor-card px-8 py-6 text-center hover:shadow-lg transition-all hover:-translate-y-1 min-w-[140px]"
               >
-                <p className="text-3xl mb-2" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>{sns.icon}</p>
+                <p className="text-3xl mb-2 text-pink-dark font-bold">{sns.icon}</p>
                 <p className="font-bold text-charcoal">{sns.name}</p>
                 <p className="text-sm text-charcoal/50 mt-1">{sns.desc}</p>
               </a>
