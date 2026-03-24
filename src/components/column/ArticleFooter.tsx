@@ -28,7 +28,7 @@ export function ArticleFooter({ relatedArticles }: ArticleFooterProps) {
           <div className="flex gap-3 mt-3">
             <a href="https://www.tiktok.com/@attractionmagnifier" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">TikTok</a>
             <a href="https://note.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">note</a>
-            <a href="https://x.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">X</a>
+            <a href="https://x.com/attractmag_" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">X</a>
           </div>
         </div>
       </div>

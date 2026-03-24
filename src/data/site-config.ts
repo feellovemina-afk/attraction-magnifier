@@ -7,7 +7,7 @@ export const siteConfig = {
   social: {
     tiktok: "https://www.tiktok.com/@attractionmagnifier",
     note: "https://note.com/attract_mag",
-    x: "https://x.com/attract_mag",
+    x: "https://x.com/attractmag_",
   },
   nav: [
     { label: "ホーム", href: "/" },
