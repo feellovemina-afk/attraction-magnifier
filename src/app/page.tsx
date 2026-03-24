@@ -2,6 +2,13 @@ import Link from "next/link";
 import { siteConfig } from "@/data/site-config";
 import { getAllColumns } from "@/lib/columns";
 import { FadeIn } from "@/components/ui/FadeIn";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "モテ力倍増プランナー | 心理学であなたの魅力を引き出す",
+  description:
+    "愛着スタイル診断・自己肯定感診断で自分を知り、心理学コラムで恋愛力UP。無料診断とお悩み相談であなたの魅力をそっと引き出します。",
+};
 
 const features = [
   {
