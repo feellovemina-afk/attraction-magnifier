@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getColumnBySlug, getAllColumnSlugs, getAllColumns } from "@/lib/columns";
 import { columnMdxComponents } from "@/components/column/mdx-components";
+import { RelatedArticles } from "@/components/column/RelatedArticles";
 import type { Metadata } from "next";
 
 interface Props {
@@ -51,9 +52,6 @@ export default async function ColumnPage({ params }: Props) {
 
   if (!column) notFound();
 
-  const allColumns = getAllColumns().filter((c) => c.slug !== slug);
-  const relatedColumns = allColumns.slice(0, 2);
-
   return (
     <article className="max-w-3xl mx-auto px-4 py-12">
       {/* Header */}
@@ -92,20 +90,23 @@ export default async function ColumnPage({ params }: Props) {
 
       {/* Author Profile */}
       <div className="watercolor-card p-6 mt-12 flex items-start gap-4">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink/30 to-gold/30 flex items-center justify-center text-2xl flex-shrink-0">
-          🦋
-        </div>
+        <img
+          src="/profile-icon.png"
+          alt="モテ力倍増プランナー"
+          className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+        />
         <div>
           <p className="font-bold text-charcoal">モテ力倍増プランナー</p>
           <p className="text-xs text-charcoal/40 mb-2">Attraction Magnifier</p>
           <p className="text-sm text-charcoal/60 leading-relaxed">
-            恋愛心理学をベースに、恋が動き出すヒントをお届け。
-            TikTokで1分動画、noteで深掘りコラム、Xで毎日ミニテクを配信中。
+            あなたの魅力を、そっと引き出す。恋も、人生も。
+            TikTokで1分動画、noteで深掘りコラム、Xで毎日ミニテクを配信中 🦋
           </p>
           <div className="flex gap-3 mt-3">
-            <a href="https://www.tiktok.com/@attractionmagnifier" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">TikTok</a>
-            <a href="https://note.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">note</a>
-            <a href="https://x.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">X</a>
+            <a href="https://www.tiktok.com/@attractionmagnifier" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">🎵 TikTok</a>
+            <a href="https://note.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">📝 note</a>
+            <a href="https://x.com/attract_mag" target="_blank" rel="noopener noreferrer" className="text-xs text-pink-dark hover:underline">💬 X</a>
+            <a href="/contact" className="text-xs text-pink-dark hover:underline">💌 お悩み相談</a>
           </div>
         </div>
       </div>
@@ -129,31 +130,8 @@ export default async function ColumnPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Related Articles */}
-      {relatedColumns.length > 0 && (
-        <div className="mt-12">
-          <h3 className="text-lg font-bold text-charcoal mb-6">📖 関連コラム</h3>
-          <div className="grid gap-4">
-            {relatedColumns.map((related) => (
-              <Link
-                key={related.slug}
-                href={`/columns/${related.slug}`}
-                className="watercolor-card p-5 hover:shadow-md transition-all group"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{related.coverEmoji}</span>
-                  <div>
-                    <p className="font-bold text-charcoal group-hover:text-pink-dark transition-colors">
-                      {related.title}
-                    </p>
-                    <p className="text-xs text-charcoal/40 mt-1">{related.date}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Related Articles - Level-based Recommendations */}
+      <RelatedArticles currentSlug={slug} currentCategory={column.category} />
 
       {/* Share */}
       <div className="mt-10 pt-6 border-t border-pink-light/30 text-center">
