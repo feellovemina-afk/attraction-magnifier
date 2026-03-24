@@ -88,6 +88,29 @@ export function SelfEsteemQuiz() {
           </div>
         )}
 
+        {/* Share Buttons */}
+        <div className="pt-6 border-t border-pink-light/30 text-center">
+          <p className="text-sm text-charcoal/40 mb-3">診断結果をシェア</p>
+          <div className="flex justify-center gap-4">
+            <a
+              href={`https://x.com/intent/tweet?text=${encodeURIComponent(`私の自己肯定感タイプは「${result.name}」でした🦋\nあなたも診断してみて？`)}&url=${encodeURIComponent("https://attraction-magnifier.vercel.app/quiz/self-esteem")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-charcoal text-white text-sm font-medium hover:bg-charcoal/80 transition-colors"
+            >
+              𝕏 でシェア
+            </a>
+            <a
+              href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent("https://attraction-magnifier.vercel.app/quiz/self-esteem")}&text=${encodeURIComponent(`私の自己肯定感タイプは「${result.name}」でした🦋`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#06C755] text-white text-sm font-medium hover:bg-[#05b34d] transition-colors"
+            >
+              LINE でシェア
+            </a>
+          </div>
+        </div>
+
         <div className="flex flex-col gap-3">
           <Link
             href="/columns/self-esteem-love"
