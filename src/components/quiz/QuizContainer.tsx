@@ -180,7 +180,7 @@ export function QuizContainer() {
         </div>
 
         <p className="text-center text-xs text-charcoal/30 mt-8">
-          ※「引力タイプ」はボウルビィの愛着理論をベースにした独自の分類です
+          ※ボウルビィの愛着理論をベースにした独自分類です
         </p>
       </div>
     );

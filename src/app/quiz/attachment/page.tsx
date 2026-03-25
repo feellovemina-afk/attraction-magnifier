@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { QuizContainer } from "@/components/quiz/QuizContainer";
 
 export const metadata: Metadata = {
-  title: '愛着スタイル診断 - あなたの"引力タイプ"は？',
+  title: '愛着スタイル診断 ー あなたの"引力タイプ"は？',
   description: '10問の質問に答えるだけで、あなたの愛着スタイル（安定型・不安型・回避型・恐れ型）と"引力タイプ"がわかります。心理学に基づいた無料診断。',
 };
 
