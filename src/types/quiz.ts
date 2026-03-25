@@ -22,6 +22,7 @@ export interface AttachmentTypeInfo {
   type: AttachmentType;
   name: string;
   nameEn: string;
+  gravityType: string;
   emoji: string;
   color: string;
   summary: string;

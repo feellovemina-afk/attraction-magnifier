@@ -43,9 +43,12 @@ export function QuizContainer() {
         <div className="watercolor-card p-8 md:p-10 text-center mb-8">
           <p className="text-5xl mb-4">{result.emoji}</p>
           <p className="text-sm text-charcoal/50 mb-1">{result.nameEn}</p>
-          <h2 className="text-3xl font-bold text-charcoal mb-4">
+          <h2 className="text-3xl font-bold text-charcoal mb-2">
             あなたは「{result.name}」
           </h2>
+          <p className="text-base text-pink-dark font-medium mb-4">
+            ✨ {result.gravityType}
+          </p>
           <div className={`inline-block px-4 py-1 rounded-full bg-gradient-to-r ${result.color} text-sm font-medium mb-6`}>
             Attachment Style
           </div>
@@ -138,7 +141,7 @@ export function QuizContainer() {
           <p className="text-sm text-charcoal/40 mb-3">診断結果をシェア</p>
           <div className="flex justify-center gap-4">
             <a
-              href={`https://x.com/intent/tweet?text=${encodeURIComponent(`私の愛着スタイルは「${result.name}」でした🦋\nあなたも診断してみて？`)}&url=${encodeURIComponent("https://attraction-magnifier.vercel.app/quiz/attachment")}`}
+              href={`https://x.com/intent/tweet?text=${encodeURIComponent(`私の愛着スタイルは「${result.name}」✨${result.gravityType}でした🦋\nあなたも診断してみて？`)}&url=${encodeURIComponent("https://attraction-magnifier.vercel.app/quiz/attachment")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-charcoal text-white text-sm font-medium hover:bg-charcoal/80 transition-colors"
@@ -146,7 +149,7 @@ export function QuizContainer() {
               𝕏 でシェア
             </a>
             <a
-              href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent("https://attraction-magnifier.vercel.app/quiz/attachment")}&text=${encodeURIComponent(`私の愛着スタイルは「${result.name}」でした🦋`)}`}
+              href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent("https://attraction-magnifier.vercel.app/quiz/attachment")}&text=${encodeURIComponent(`私の愛着スタイルは「${result.name}」✨${result.gravityType}でした🦋`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#06C755] text-white text-sm font-medium hover:bg-[#05b34d] transition-colors"
@@ -175,6 +178,10 @@ export function QuizContainer() {
             すべてのコラムを見る →
           </Link>
         </div>
+
+        <p className="text-center text-xs text-charcoal/30 mt-8">
+          ※「引力タイプ」はボウルビィの愛着理論をベースにした独自の分類です
+        </p>
       </div>
     );
   }

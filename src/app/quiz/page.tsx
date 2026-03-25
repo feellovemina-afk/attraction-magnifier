@@ -3,15 +3,16 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "心理学診断 | Attraction Magnifier",
-  description: "愛着スタイル診断・自己肯定感診断。10問の質問に答えるだけで、あなたの恋愛パターンや自己肯定感タイプがわかります。",
+  description: "愛着スタイル診断（引力タイプ診断）・自己肯定感診断。10問の質問に答えるだけで、あなたの恋愛パターンや引力タイプがわかります。",
 };
 
 const quizzes = [
   {
     emoji: "🔮",
     title: "愛着スタイル診断",
+    subtitle: 'あなたの"引力タイプ"は？',
     description: "あなたの恋愛パターンは？安定型・不安型・回避型・恐れ型の4タイプで診断",
-    time: "3分・10問",
+    time: "10問・無料",
     href: "/quiz/attachment",
     color: "from-pink/20 to-butterfly/20",
     popular: true,
@@ -20,7 +21,7 @@ const quizzes = [
     emoji: "🌸",
     title: "自己肯定感診断",
     description: "今の自分をどれくらい受け入れられてる？4タイプで自己肯定感をチェック",
-    time: "3分・10問",
+    time: "10問・無料",
     href: "/quiz/self-esteem",
     color: "from-gold/20 to-gold-light/20",
     popular: false,
@@ -59,8 +60,11 @@ export default function QuizIndexPage() {
                       <span className="text-xs bg-pink text-white px-2 py-0.5 rounded-full">人気</span>
                     )}
                   </div>
+                  {"subtitle" in quiz && quiz.subtitle && (
+                    <p className="text-sm font-medium text-pink-dark mb-1">{quiz.subtitle}</p>
+                  )}
                   <p className="text-sm text-charcoal/60 mb-2">{quiz.description}</p>
-                  <p className="text-xs text-charcoal/40">⏱ {quiz.time}・無料</p>
+                  <p className="text-xs text-charcoal/40">⏱ {quiz.time}</p>
                 </div>
                 <span className="text-charcoal/30 group-hover:text-pink-dark transition-colors text-2xl">→</span>
               </div>
