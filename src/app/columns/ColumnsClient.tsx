@@ -6,12 +6,12 @@ import type { ColumnFrontmatter } from "@/types/column";
 
 const categoryFilters = [
   { label: "全て", value: "all", emoji: "✨" },
-  { label: "恋愛", value: "恋愛", emoji: "💕" },
-  { label: "愛着スタイル", value: "愛着スタイル", emoji: "🧠" },
-  { label: "LINE心理学", value: "LINE", emoji: "📱" },
-  { label: "メンタル", value: "メンタル", emoji: "💪" },
-  { label: "印象力", value: "印象力", emoji: "💄" },
-  { label: "人間関係", value: "人間関係", emoji: "🤝" },
+  { label: "彼の本音", value: "彼の本音", emoji: "💌" },
+  { label: "LINE・連絡", value: "LINE・連絡", emoji: "📱" },
+  { label: "自分を知る", value: "自分を知る", emoji: "🌸" },
+  { label: "出会い・アプリ", value: "出会い・アプリ", emoji: "📲" },
+  { label: "デート", value: "デート", emoji: "✨" },
+  { label: "危険サイン", value: "危険サイン", emoji: "⚠️" },
 ];
 
 interface Props {
@@ -23,7 +23,7 @@ export function ColumnsClient({ columns }: Props) {
 
   const filteredColumns = activeFilter === "all"
     ? columns
-    : columns.filter((col) => col.category.includes(activeFilter));
+    : columns.filter((col) => col.category === activeFilter);
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-12">
