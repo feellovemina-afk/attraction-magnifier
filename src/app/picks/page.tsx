@@ -1,44 +1,83 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { affiliateItems, type AffiliateItem } from "@/data/affiliates";
 
 export const metadata: Metadata = {
-  title: "My Picks - おすすめアイテム",
-  description: "恋愛力・自分磨きに役立つ美容アイテム、心理学の本、マッチングアプリを厳選紹介。",
+  title: "My Picks - 本当におすすめできるものだけ",
+  description:
+    "恋愛心理学を学んだ私が本当に良いと思ったマッチングアプリ・書籍・カウンセリングサービスだけを厳選。愛着スタイル別のおすすめも。",
 };
 
-const categories = [
+const sections = [
   {
-    id: "beauty",
-    emoji: "💄",
-    title: "Beauty",
-    subtitle: "自分磨きが加速するおすすめアイテム",
-    items: [
-      { name: "デート前のスキンケアルーティン", status: "coming-soon" },
-      { name: "自己肯定感が上がるメイクアイテム5選", status: "coming-soon" },
-      { name: "彼が思わず触れたくなるヘアケア", status: "coming-soon" },
-    ],
-  },
-  {
-    id: "books",
-    emoji: "📚",
-    title: "Books",
-    subtitle: "恋愛力が上がる心理学の本",
-    items: [
-      { name: "愛着障害 — 岡田尊司", desc: "愛着スタイルを深く理解するための一冊", status: "ready" },
-      { name: "異性の心を上手に透視する方法 — アミール・レバイン", desc: "愛着理論を恋愛に応用した実用書", status: "ready" },
-      { name: "嫌われる勇気 — 岸見一郎", desc: "自己肯定感を高めるアドラー心理学", status: "ready" },
-    ],
-  },
-  {
-    id: "apps",
+    category: "app" as const,
     emoji: "💕",
     title: "マッチングアプリ",
-    subtitle: "愛着スタイル別おすすめアプリ",
-    items: [
-      { name: "本気の出会いを探すならこの3つ", status: "coming-soon" },
-    ],
+    subtitle: "愛着スタイルを知った上で選ぶと、出会いの質が変わるよ",
+    note: "自分の愛着スタイルがわからない人は、まず診断してみてね",
+    noteLink: "/quiz",
+    noteLinkText: "無料で診断する",
+  },
+  {
+    category: "book" as const,
+    emoji: "📚",
+    title: "心理学の本",
+    subtitle: "コラムの元ネタになっている本たち。もっと深く知りたい人へ",
+  },
+  {
+    category: "counseling" as const,
+    emoji: "🫧",
+    title: "カウンセリング",
+    subtitle: "自分だけで抱えなくていい。プロに頼るのも勇気だよ",
   },
 ];
+
+function PickCard({ item }: { item: AffiliateItem }) {
+  return (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block watercolor-card p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="font-bold text-charcoal group-hover:text-pink-dark transition-colors">
+              {item.name}
+            </h3>
+            {item.tag && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r from-pink-light to-pink-light/50 text-pink-dark font-medium whitespace-nowrap">
+                {item.tag}
+              </span>
+            )}
+          </div>
+          <p className="text-sm text-charcoal/50 mb-2">{item.description}</p>
+          {item.detail && (
+            <p className="text-sm text-charcoal/70 leading-relaxed">
+              {item.detail}
+            </p>
+          )}
+          {item.attachmentTypes && item.attachmentTypes.length > 0 && (
+            <div className="flex gap-1.5 mt-3">
+              {item.attachmentTypes.map((type) => (
+                <span
+                  key={type}
+                  className="text-[10px] px-2 py-0.5 rounded-full bg-cream text-charcoal/60 border border-charcoal/10"
+                >
+                  {type}におすすめ
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+        <span className="text-charcoal/30 group-hover:text-pink-dark group-hover:translate-x-1 transition-all mt-1 shrink-0">
+          &rarr;
+        </span>
+      </div>
+    </a>
+  );
+}
 
 export default function PicksPage() {
   return (
@@ -50,61 +89,71 @@ export default function PicksPage() {
             <h1 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-3">
               My Picks
             </h1>
-            <p className="text-charcoal/60">
-              恋愛力・自分磨きに役立つアイテムを厳選
+            <p className="text-charcoal/60 max-w-md mx-auto">
+              本当に良いと思ったものだけを紹介してるの。
+              <br />
+              あなたの恋愛と自分磨きの役に立てたら嬉しいな。
             </p>
           </div>
         </FadeIn>
 
-        <div className="space-y-12">
-          {categories.map((cat, catIdx) => (
-            <FadeIn key={cat.id} delay={catIdx * 150}>
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">{cat.emoji}</span>
-                  <div>
-                    <h2 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-charcoal">
-                      {cat.title}
-                    </h2>
-                    <p className="text-sm text-charcoal/50">{cat.subtitle}</p>
+        <div className="space-y-14">
+          {sections.map((sec, secIdx) => {
+            const items = affiliateItems.filter(
+              (item) => item.category === sec.category
+            );
+            return (
+              <FadeIn key={sec.category} delay={secIdx * 150}>
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{sec.emoji}</span>
+                    <div>
+                      <h2 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-charcoal">
+                        {sec.title}
+                      </h2>
+                      <p className="text-sm text-charcoal/50">
+                        {sec.subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  {sec.note && (
+                    <div className="mb-4 ml-9 flex items-center gap-2 text-sm">
+                      <span className="text-pink">💡</span>
+                      <span className="text-charcoal/50">{sec.note}</span>
+                      {sec.noteLink && (
+                        <a
+                          href={sec.noteLink}
+                          className="text-pink-dark hover:underline font-medium"
+                        >
+                          {sec.noteLinkText} &rarr;
+                        </a>
+                      )}
+                    </div>
+                  )}
+
+                  <div className="space-y-3">
+                    {items.map((item) => (
+                      <PickCard key={item.id} item={item} />
+                    ))}
                   </div>
                 </div>
-                <div className="space-y-3">
-                  {cat.items.map((item, i) => (
-                    <div
-                      key={i}
-                      className="watercolor-card p-5 hover:shadow-md transition-all"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-bold text-charcoal">{item.name}</p>
-                          {"desc" in item && item.desc && (
-                            <p className="text-sm text-charcoal/50 mt-1">{item.desc}</p>
-                          )}
-                        </div>
-                        {item.status === "coming-soon" && (
-                          <span className="text-xs px-3 py-1 rounded-full bg-pink-light/50 text-pink-dark whitespace-nowrap">
-                            Coming Soon
-                          </span>
-                        )}
-                        {item.status === "ready" && (
-                          <span className="text-xs px-3 py-1 rounded-full bg-gold-light/50 text-gold whitespace-nowrap">
-                            🔗 準備中
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            );
+          })}
         </div>
 
         <FadeIn delay={600}>
-          <div className="text-center mt-12 text-sm text-charcoal/40">
-            <p>アフィリエイトリンクは準備中です。</p>
-            <p>Amazonアソシエイト承認後に順次追加予定。</p>
+          <div className="watercolor-card p-6 mt-14 text-center">
+            <p className="text-sm text-charcoal/70 leading-relaxed">
+              このページで紹介しているサービスには、一部アフィリエイトリンクが含まれます。
+              <br />
+              紹介料をいただくことがありますが、
+              <span className="font-medium text-charcoal">
+                本当に良いと思ったものだけ
+              </span>
+              を掲載しています。
+            </p>
           </div>
         </FadeIn>
       </div>
