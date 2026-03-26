@@ -5,13 +5,14 @@ import Link from "next/link";
 import type { ColumnFrontmatter } from "@/types/column";
 
 const categoryFilters = [
-  { label: "全て", value: "all", emoji: "✨" },
-  { label: "彼の本音", value: "彼の本音", emoji: "💌" },
-  { label: "LINE・連絡", value: "LINE・連絡", emoji: "📱" },
-  { label: "自分を知る", value: "自分を知る", emoji: "🌸" },
-  { label: "出会い・アプリ", value: "出会い・アプリ", emoji: "📲" },
-  { label: "デート", value: "デート", emoji: "✨" },
-  { label: "危険サイン", value: "危険サイン", emoji: "⚠️" },
+  { label: "全て", value: "all", emoji: "✦", description: "" },
+  { label: "愛着スタイル", value: "愛着スタイル", emoji: "🦋", description: "あなたの恋愛パターンには理由がある。心理学が教えてくれる\"愛し方のクセ\"を知ろう" },
+  { label: "彼の本音", value: "彼の本音", emoji: "💌", description: "好き避け、既読スルー、友達止まり——彼の行動の裏にある本当の気持ちを読み解く" },
+  { label: "LINE", value: "LINE", emoji: "📱", description: "既読がつかない夜、返信の\"…\"が気になる朝。LINEの心理学で不安をほどく" },
+  { label: "マッチングアプリ", value: "マッチングアプリ", emoji: "💕", description: "アプリ選びから最初のメッセージまで。心理学ベースの出会いの戦略" },
+  { label: "デート", value: "デート", emoji: "🍽️", description: "第一印象の7秒、沈黙の3秒、告白のタイミング。デートを科学する" },
+  { label: "心のケア", value: "心のケア", emoji: "🌿", description: "\"重い\"と言われた夜も、自分を嫌いになった朝も。あなたはあなたのままでいい" },
+  { label: "危険サイン", value: "危険サイン", emoji: "⚠️", description: "\"好き\"の裏に隠れた支配のサイン、見逃さないで" },
 ];
 
 interface Props {
@@ -24,6 +25,15 @@ export function ColumnsClient({ columns }: Props) {
   const filteredColumns = activeFilter === "all"
     ? columns
     : columns.filter((col) => col.category === activeFilter);
+
+  const visibleFilters = categoryFilters.filter((filter) => {
+    if (filter.value === "all") return true;
+    return columns.filter((col) => col.category === filter.value).length >= 2;
+  });
+
+  const activeDescription = categoryFilters.find(
+    (f) => f.value === activeFilter
+  )?.description;
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-12">
@@ -38,8 +48,8 @@ export function ColumnsClient({ columns }: Props) {
       </div>
 
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-2 mb-10">
-        {categoryFilters.map((filter) => (
+      <div className="flex flex-wrap justify-center gap-2 mb-4">
+        {visibleFilters.map((filter) => (
           <button
             key={filter.value}
             onClick={() => setActiveFilter(filter.value)}
@@ -53,6 +63,12 @@ export function ColumnsClient({ columns }: Props) {
           </button>
         ))}
       </div>
+
+      {activeDescription && (
+        <p className="text-center text-sm text-charcoal/50 mb-10 max-w-lg mx-auto">
+          {activeDescription}
+        </p>
+      )}
 
       {filteredColumns.length === 0 ? (
         <div className="text-center py-16">
