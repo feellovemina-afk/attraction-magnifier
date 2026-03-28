@@ -3,6 +3,7 @@ import { Zen_Maru_Gothic, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site-config";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const zenMaru = Zen_Maru_Gothic({
@@ -63,6 +64,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
