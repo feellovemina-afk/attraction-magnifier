@@ -1,6 +1,22 @@
 /**
  * アフィリエイトリンク一元管理
- * リンクURLは承認後に実際のアフィリエイトリンクに差し替える
+ *
+ * ASPアカウント:
+ *   afb (アフィリエイトB): ID attractmag（審査中 2026-03-31申請）
+ *   A8.net: メディアID a26032694701
+ *   アクセストレード: ID attractmag
+ *   Amazonアソシエイト: ストアID attractmag-22
+ *
+ * ASP調査結果 (2026-03-31):
+ *   Pairs → afb / A8.net（ペアーズ公式アフィリエイトページ経由）
+ *   with → afb（A8.netからは撤退済み）
+ *   Omiai → TCSアフィリエイト（A8/afb/アクセストレードは終了）
+ *   cotree → もしもアフィリエイト / A8.net
+ *   Unlace → 2024年3月サービス終了 → 削除済み
+ *
+ * リンク差し替え手順:
+ *   1. afb管理画面 → プログラム検索 → 広告主名で検索 → 提携申請
+ *   2. 承認後 → 広告リンク作成 → URLをここに貼り付け
  */
 
 export type AffiliateItem = {
@@ -22,6 +38,7 @@ export const affiliateItems: AffiliateItem[] = [
     name: "Pairs（ペアーズ）",
     description: "国内最大級の会員数。真剣な出会いを探す人に",
     detail: "会員数2,000万人突破。心理テストや相性診断機能が充実していて、愛着スタイルを理解した上でのマッチングがしやすいの。安全対策もしっかりしてるから、初めてのアプリにもおすすめだよ。",
+    // ASP: afb「Pairs」で提携申請 → 承認後にリンク差し替え
     url: "https://www.pairs.lv/",
     tag: "初めてならコレ",
     category: "app",
@@ -32,6 +49,7 @@ export const affiliateItems: AffiliateItem[] = [
     name: "with（ウィズ）",
     description: "心理学×AIマッチング。相性重視の人に",
     detail: "心理学に基づいた性格診断でマッチングしてくれるアプリ。愛着スタイルを学んだあなたなら、この診断結果をもっと深く理解できるはず。内面重視の出会いを探してるならここ。",
+    // ASP: afb「with」で提携申請 → 承認後にリンク差し替え
     url: "https://with.is/",
     tag: "相性重視ならコレ",
     category: "app",
@@ -42,6 +60,7 @@ export const affiliateItems: AffiliateItem[] = [
     name: "Omiai",
     description: "婚活よりの真剣な出会い。将来を見据えたい人に",
     detail: "結婚を意識した真剣な出会いが多いアプリ。プロフィールの充実度が高くて、お互いの価値観を事前に知れるのが強み。安定した関係を築きたい人に向いてるよ。",
+    // ASP: TCSアフィリエイト「Omiai」で提携申請（A8/afb/ATは終了）
     url: "https://fb.omiai-jp.com/",
     tag: "真剣婚活ならコレ",
     category: "app",
@@ -83,19 +102,12 @@ export const affiliateItems: AffiliateItem[] = [
     name: "cotree（コトリー）",
     description: "オンラインカウンセリング。テキスト相談もOK",
     detail: "自分だけで解決できない恋愛の悩みは、プロに頼るのも大事な選択肢。テキストカウンセリングなら、好きな時間に相談できるよ。臨床心理士・公認心理師が対応してくれるの。",
+    // ASP: もしもアフィリエイト or A8.net「cotree」で提携申請
     url: "https://cotree.jp/",
     tag: "テキスト相談OK",
     category: "counseling",
   },
-  {
-    id: "unlace",
-    name: "Unlace（アンレース）",
-    description: "24時間チャットカウンセリング。定額制で安心",
-    detail: "月額定額でいつでもチャット相談できるサービス。恋愛の悩みって夜中にふっと重くなるよね。そんな時に24時間相談できるのは心強いよ。",
-    url: "https://www.unlace.net/",
-    tag: "24時間定額制",
-    category: "counseling",
-  },
+  // Unlace（アンレース）は2024年3月にサービス終了のため削除 (2026-03-31)
 ];
 
 // カテゴリ別に取得するヘルパー
