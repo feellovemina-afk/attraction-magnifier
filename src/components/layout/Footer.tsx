@@ -86,6 +86,41 @@ export function Footer() {
         </div>
       </div>
 
+      {/* 安全注意（グローバル常設） */}
+      <div className="bg-pink-light/10 py-6 border-t border-pink-light/20">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <p className="text-xs text-charcoal/60 mb-3">
+            もし、不安を感じる関係に気づいたら、ここで話せるよ 🦋
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px]">
+            <a
+              href="https://soudanplus.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-charcoal/50 hover:text-pink-dark underline-offset-2 hover:underline transition-colors"
+            >
+              DV相談+
+            </a>
+            <a
+              href="https://www.since2011.net/yorisoi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-charcoal/50 hover:text-pink-dark underline-offset-2 hover:underline transition-colors"
+            >
+              よりそいホットライン
+            </a>
+            <a
+              href="https://www.npa.go.jp/bureau/soumu/soudan/soudanmadoguti.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-charcoal/50 hover:text-pink-dark underline-offset-2 hover:underline transition-colors"
+            >
+              警察相談ダイヤル #9110
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* フッターナビ + コピーライト */}
       <div className="max-w-5xl mx-auto px-4 py-8 space-y-5">
         <div className="flex justify-center">
