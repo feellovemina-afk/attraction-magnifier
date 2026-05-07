@@ -153,6 +153,46 @@ export const affiliateItems: AffiliateItem[] = [
     category: "counseling",
   },
   // Unlace（アンレース）は2024年3月にサービス終了のため削除 (2026-03-31)
+
+  // ━━━ ビューティー（自己ケア・夜の処方箋系） ━━━
+  // 採用基準v2準拠：恋愛地続きの「自己ケア・セルフラブ」軸のみ
+  // ※整形・極端ダイエット・男ウケ系メイクは除外
+  {
+    id: "barth",
+    name: "BARTH 中性重炭酸入浴剤",
+    description: "30錠 / アース製薬 著名スパ採用",
+    detail: "動けない夜、湯船にこれを入れるだけで、自分への小さな許しになる。重炭酸が血流を整えて、心も体もほどけていく。「お風呂は儀式」って言葉の意味が、わかる入浴剤だよ。",
+    url: "https://www.amazon.co.jp/dp/B077H2PLK6?tag=attractmag-22",
+    tag: "夜の儀式",
+    category: "beauty",
+  },
+  {
+    id: "kneipp",
+    name: "クナイプ バスソルト ラベンダー",
+    description: "850g / ラベンダーの香り",
+    detail: "ドイツ生まれの天然岩塩バスソルト。ラベンダーの香りに包まれると、ようやく自分を呼び戻せた気がする夜があるの。考えすぎた一日のあと、香りに身を任せるための一袋。",
+    url: "https://www.amazon.co.jp/dp/B001C86CW4?tag=attractmag-22",
+    tag: "香りで自分を呼び戻す",
+    category: "beauty",
+  },
+  {
+    id: "pukka-night",
+    name: "PUKKA ナイトタイム ハーブティー",
+    description: "20ティーバッグ / オーガニック",
+    detail: "ラベンダー・カモミール・オートフラワーのブレンド。眠れない夜の3口目で、考えすぎが少しほどけていく。寝る前のリチュアルにぴったりのオーガニックハーブティー。",
+    url: "https://www.amazon.co.jp/dp/B0030EGQ6K?tag=attractmag-22",
+    tag: "眠れない夜の処方箋",
+    category: "beauty",
+  },
+  {
+    id: "nerunoda",
+    name: "ネルノダ 粒タイプ",
+    description: "22袋 / ハウスウェルネスフーズ 機能性表示食品",
+    detail: "GABA配合の睡眠サポートサプリ。「明日のことを考えすぎて眠れない脳」に、一粒の処方箋を。一時的なストレス緩和・睡眠の質向上が消費者庁届出済。",
+    url: "https://www.amazon.co.jp/dp/B084H6LLG1?tag=attractmag-22",
+    tag: "考えすぎる脳をほどく",
+    category: "beauty",
+  },
 ];
 
 // カテゴリ別に取得するヘルパー

@@ -30,6 +30,13 @@ const sections = [
     title: "カウンセリング",
     subtitle: "自分だけで抱えなくていい。プロに頼るのも勇気だよ",
   },
+  {
+    category: "beauty" as const,
+    emoji: "🌙",
+    title: "夜の処方箋（自己ケア）",
+    subtitle: "恋愛で疲れた夜を、自分のために整える儀式",
+    note: "「彼のため」じゃなく「自分のため」のセルフケアだけ厳選しています",
+  },
 ];
 
 function PickCard({ item }: { item: AffiliateItem }) {
