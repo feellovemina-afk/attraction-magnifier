@@ -66,6 +66,28 @@ export const affiliateItems: AffiliateItem[] = [
     category: "app",
     attachmentTypes: ["安定型", "回避型"],
   },
+  {
+    id: "party-party",
+    name: "PARTY☆PARTY（IBJ Matching）",
+    description: "リアルで会う婚活パーティー。アプリ疲れの人に",
+    detail: "東証プライム上場のIBJが運営する婚活パーティー。「文章のやりとりに疲れた」「直接会って話したい」って人にぴったり。年齢層・職業別など細かく選べるから、自分に合う相手と直接会えるの。アプリで結果が出なかった人の次の一歩に。",
+    // ASP: A8.net「PARTY☆PARTY」承認済 (2026-05-07)
+    url: "https://px.a8.net/svt/ejp?a8mat=4B3KUQ+36WOJ6+FOG+3H2BC2",
+    tag: "リアル婚活ならコレ",
+    category: "app",
+    attachmentTypes: ["安定型", "不安型"],
+  },
+  {
+    id: "marrish",
+    name: "マリッシュ（marrish）",
+    description: "30代以上中心の恋活・婚活・再婚活アプリ",
+    detail: "30〜50代が中心の落ち着いた大人世代向けマッチングアプリ。再婚活にも理解があるユーザーが多くて、慎重派・安定志向の人に合うの。20代向けアプリで疲れた30代以上の人、シングルマザー・離婚経験のある人にも安心の環境。",
+    // ASP: A8.net「マリッシュ」承認済 (2026-05-07)
+    url: "https://px.a8.net/svt/ejp?a8mat=4B3KUQ+1SBLE+3N2M+6N741",
+    tag: "30代以上の本気恋活",
+    category: "app",
+    attachmentTypes: ["回避型", "安定型"],
+  },
 
   // ━━━ 書籍 ━━━
   {
