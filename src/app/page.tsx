@@ -167,6 +167,45 @@ export default function Home() {
         </FadeIn>
       </section>
 
+      {/* My Picks - 夜の処方箋 */}
+      <section className="max-w-5xl mx-auto px-4 py-12">
+        <FadeIn>
+          <div className="text-center mb-10">
+            <p className="text-3xl mb-3">🌙</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-1">
+              夜の処方箋
+            </h2>
+            <p className="font-[family-name:var(--font-playfair)] text-sm text-charcoal/30 italic">
+              My Picks for Self-Care
+            </p>
+            <p className="text-sm text-charcoal/60 mt-3 max-w-md mx-auto leading-relaxed">
+              恋愛で消耗した夜、自分のために整える儀式を集めました🦋
+            </p>
+          </div>
+        </FadeIn>
+        <FadeIn delay={150}>
+          <Link
+            href="/picks"
+            className="block max-w-2xl mx-auto watercolor-card p-8 hover:shadow-lg transition-all hover:-translate-y-1 group text-center"
+          >
+            <div className="flex items-center justify-center gap-3 text-3xl mb-4">
+              <span>🛁</span>
+              <span>🌿</span>
+              <span>🍵</span>
+              <span>💊</span>
+            </div>
+            <p className="text-charcoal/70 mb-5 leading-relaxed text-sm md:text-base">
+              BARTH 入浴剤・クナイプ ラベンダー・PUKKA ナイトタイム・ネルノダ。
+              <br />
+              「彼のため」じゃなく「自分のため」のセルフケアだけ厳選。
+            </p>
+            <span className="inline-block text-pink-dark group-hover:text-pink font-medium transition-colors">
+              My Picks → 夜の処方箋へ →
+            </span>
+          </Link>
+        </FadeIn>
+      </section>
+
       {/* Quiz Banner with MJ image */}
       <section className="relative overflow-hidden py-20">
         <img
