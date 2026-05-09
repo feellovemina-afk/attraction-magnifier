@@ -88,6 +88,17 @@ export const affiliateItems: AffiliateItem[] = [
     category: "app",
     attachmentTypes: ["回避型", "安定型"],
   },
+  {
+    id: "photojoy",
+    name: "Photojoy（マッチングアプリ専門プロフ撮影）",
+    description: "プロフ写真でマッチング率を底上げする出張撮影",
+    detail: "マッチングアプリで「いいねが伸びない」一番の理由は、実はプロフ写真。Photojoyはマッチングアプリ専門のプロカメラマンが、自然光と表情を生かしたプロフ写真を撮ってくれる出張撮影サービス。自撮りと比べて「いいね数3倍」報告も多くて、5つのアプリ（Pairs/with/Omiai/PARTY☆PARTY/マリッシュ）どれにも使える写真が手に入るの。「彼に出会う前の準備」に投資できる人へ。",
+    // ASP: afb「Photojoy」承認済 (2021-12-06提携)
+    url: "https://t.afi-b.com/visit.php?a=A132958-j437428d&p=79769281",
+    tag: "プロフ写真で底上げ",
+    category: "app",
+    attachmentTypes: ["不安型", "回避型"],
+  },
 
   // ━━━ 書籍 ━━━
   {
