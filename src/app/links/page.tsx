@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description: "Attraction Magnifierの全コンテンツへのリンク。診断・コラム・SNS・お悩み相談はこちらから。",
 };
 
+// 🎬 最新の動画のつづき（TikTok を出すたびに、ここだけ差し替える）
+const featured = {
+  label: "最新の動画のつづき",
+  title: "「好きな人いるの？」と聞かれたら",
+  desc: "答える前に知っておきたい、彼の心理（無料コラム）",
+  href: "/columns/sukinahito-iruno-psychology",
+};
+
 const links = [
   {
     emoji: "🔮",
@@ -68,6 +76,17 @@ export default function LinksPage() {
       <p className="text-xs text-charcoal/40 mb-8">あなたの魅力を、そっと引き出す 🦋</p>
 
       <div className="w-full max-w-md space-y-3">
+        <Link
+          href={featured.href}
+          className="block w-full rounded-2xl p-4 text-center bg-white border-2 border-pink shadow-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+        >
+          <span className="inline-block text-[11px] font-bold text-white bg-pink-dark rounded-full px-3 py-0.5">
+            🎬 {featured.label}
+          </span>
+          <p className="font-bold text-base mt-2 text-charcoal">{featured.title}</p>
+          <p className="text-xs mt-1 text-charcoal/60">{featured.desc}</p>
+          <p className="text-xs mt-2 font-bold text-pink-dark">読む →</p>
+        </Link>
         {links.map((link) => {
           const Tag = link.external ? "a" : Link;
           const extraProps = link.external
